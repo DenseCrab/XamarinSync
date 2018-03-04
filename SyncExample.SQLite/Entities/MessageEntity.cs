@@ -1,0 +1,25 @@
+﻿using SQLite;
+using SyncExample.SQLite.DTOs;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace SyncExample.SQLite.Entities
+{
+    public class MessageEntity : IMessageDTO
+    {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
+        public string Text { get; set; }
+        public string Description { get; set; }
+
+        public string CreatedBy { get; set; }
+        public string UpdatedBy { get; set; }
+        public DateTimeOffset? SyncedOn { get; set; }
+        public DateTimeOffset? CreatedOn { get; set; }
+        public DateTimeOffset? UpdatedOn { get; set; }
+
+        public int ApiId { get; set; }
+    }
+}
